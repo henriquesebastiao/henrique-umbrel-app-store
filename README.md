@@ -1,8 +1,8 @@
-## Umbrel Community App Store Template
+# Umbrel Community App Store Template
 
 This repository is a template to create an Umbrel Community App Store. These additional app stores allow developers to distribute applications without submitting to the [Official Umbrel App Store](https://github.com/getumbrel/umbrel-apps).
 
-## How to use:
+## How to use
 
 1. Start by clicking the "Use this template" button located above.
 2. Assign an ID and name to your app store within the `umbrel-app-store.yml` file. This file specifies two important attributes:
