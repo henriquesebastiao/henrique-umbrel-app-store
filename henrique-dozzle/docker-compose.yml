@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: henrique-dozzle_web_1
+      APP_PORT: 8080
+  
+  web:
+    image: amir20/dozzle:v8.10.5@sha256:c678e2807a6af879759fb15c2777b9f6e70e6ddec93d1e3b3eb64d50eb587c1b
+    restart: on-failure
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
