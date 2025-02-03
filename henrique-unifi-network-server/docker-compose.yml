@@ -1,0 +1,52 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: henrique-unifi-network-server_proxy_1
+      APP_PORT: 8081
+
+  web:
+    image: ghcr.io/linuxserver/unifi-network-application:9.0.108@sha256:d819f56eb5af806d4182271d9576b6abe6d6fbb73585548cc49dbf7719287d9d
+    restart: on-failure
+    stop_grace_period: 1m
+    ports:
+      - 3478:3478/udp # Unifi STUN port
+      - 10001:10001/udp # required for AP discovery
+      - 1900:1900/udp # optional, required for make controller discoverable on L2 network option
+      - 6789:6789 # optional, for mobile throughput test
+      - 5514:5514/udp # optional, remote syslog port
+    volumes:
+      - ${APP_DATA_DIR}/unifi/config:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - MONGO_USER=unifi
+      - MONGO_PASS=PsykZoTyQYAOx2rvYp5OLspelYBmAiYsuX6GLqR
+      - MONGO_HOST=henrique-unifi-network-server_db_1
+      - MONGO_PORT=27017
+      - MONGO_DBNAME=unifi
+      - MEM_LIMIT=1024 #optional
+      - MEM_STARTUP=1024 #optional
+    depends_on:
+      db:
+        condition: service_started
+        required: true
+
+  db:
+    image: docker.io/mongo:4.4@sha256:52c42cbab240b3c5b1748582cc13ef46d521ddacae002bbbda645cebed270ec0
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+      - ${APP_DATA_DIR}/data/db:/data/db
+      - ${APP_DATA_DIR}/data/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+  
+  proxy:
+    image: nginx:1.27.3-alpine-slim@sha256:5a56ae385906c5b43ccc99379bce883aa93dc0556d7f705ba501d819925e8fa1
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+      - ${APP_DATA_DIR}/data/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8081:8081
