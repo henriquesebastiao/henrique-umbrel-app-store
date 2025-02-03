@@ -3,7 +3,7 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: quant-ux_frontend_1
+      APP_HOST: henrique-quant-ux_frontend_1
       APP_PORT: 8082
 
   db:
@@ -19,7 +19,7 @@ services:
     # Image uploads break if we run as non-root
     # user: 1000:1000
     environment:
-      - QUX_PROXY_URL=http://quant-ux_backend_1:8080
+      - QUX_PROXY_URL=http://henrique-quant-ux_backend_1:8080
 
   backend:
     image: bmcgonag/qux-be:2.5.0@sha256:def18cbda64114091fb2143f7adf83ab76b010d20d72ebea758689e42b6f960f
@@ -30,10 +30,10 @@ services:
       - ${APP_DATA_DIR}/data/images/user:/qux-images-user
       - ${APP_DATA_DIR}/data/images/apps:/qux-images-apps
     environment:
-      - QUX_HTTP_HOST=http://quant-ux_frontend_1:8082
+      - QUX_HTTP_HOST=http://henrique-quant-ux_frontend_1:8082
       - QUX_HTTP_PORT=8080
       - QUX_MONGO_DB_NAME=quantux
       - QUX_MONGO_TABLE_PREFIX=quantux
-      - QUX_MONGO_CONNECTION_STRING=mongodb://quant-ux_db_1:27017
+      - QUX_MONGO_CONNECTION_STRING=mongodb://henrique-quant-ux_db_1:27017
       - QUX_IMAGE_FOLDER_USER=/qux-images-user
       - QUX_IMAGE_FOLDER_APPS=/qux-images-apps
