@@ -8,6 +8,7 @@ icon: https://raw.githubusercontent.com/henriquesebastiao/henrique-umbrel-apps-g
 description: >-
   UniFi Network Server is Ubiquiti's network management platform designed to configure, monitor, and manage UniFi devices such as access points, switches, and routers. It provides centralized network administration with features including:
 
+
   - Cloud or Local Management – Can be hosted on local servers, a UniFi Cloud Key, a UniFi Dream Machine (UDM), or in the cloud.
   
   - Real-Time Monitoring – Displays traffic statistics, connected devices, and network events.
