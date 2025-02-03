@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: quant-ux_frontend_1
+      APP_PORT: 8082
+
+  db:
+    image: mongo:6.0.3@sha256:c015870b10451c414911aff5648495bd3fcc9fe0cec340f46bb852706697a72f
+    restart: on-failure
+    user: 1000:1000
+    volumes:
+      - ${APP_DATA_DIR}/data/db:/data/db
+
+  frontend:
+    image: bmcgonag/qux-fe:2.5.0@sha256:3b895fd25cf4a1057251697a22d48bd0885d9b46e778014653a57f9f1c8b6f56
+    restart: on-failure
+    # Image uploads break if we run as non-root
+    # user: 1000:1000
+    environment:
+      - QUX_PROXY_URL=http://quant-ux_backend_1:8080
+
+  backend:
+    image: bmcgonag/qux-be:2.5.0@sha256:def18cbda64114091fb2143f7adf83ab76b010d20d72ebea758689e42b6f960f
+    restart: on-failure
+    # Image uploads break if we run as non-root
+    # user: 1000:1000
+    volumes:
+      - ${APP_DATA_DIR}/data/images/user:/qux-images-user
+      - ${APP_DATA_DIR}/data/images/apps:/qux-images-apps
+    environment:
+      - QUX_HTTP_HOST=http://quant-ux_frontend_1:8082
+      - QUX_HTTP_PORT=8080
+      - QUX_MONGO_DB_NAME=quantux
+      - QUX_MONGO_TABLE_PREFIX=quantux
+      - QUX_MONGO_CONNECTION_STRING=mongodb://quant-ux_db_1:27017
+      - QUX_IMAGE_FOLDER_USER=/qux-images-user
+      - QUX_IMAGE_FOLDER_APPS=/qux-images-apps
