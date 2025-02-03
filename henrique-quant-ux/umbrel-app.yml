@@ -4,10 +4,11 @@ category: developer
 name: Quant UX
 version: "2.5.0"
 tagline: Prototype, Test and Learn
-icon: https://i.imgur.com/gQ8biec.png
+icon: https://raw.githubusercontent.com/henriquesebastiao/henrique-umbrel-apps-gallery/refs/heads/main/henrique-quant-ux/icon.png
 description: >-
   Quant UX is a research, usability and prototyping tool to quickly test your designs and get data driven insights.
   
+
   Prototypes that feel real.
   All prototypes are fully interactive. Use input widgets, animations and data to make your prototype feel like a real app.
   Visual Designer: Use the powerful canvas to build amazing prototypes. Simply create screens, add interactive components and link the screens.
@@ -23,9 +24,9 @@ repo: https://github.com/KlausSchaefers/quant-ux
 support: https://www.quant-ux.com/#/help.html
 port: 8099
 gallery:
-  - https://i.imgur.com/a/M60Zsh3.jpg
-  - https://i.imgur.com/a/KAspT8K.jpg
-  - https://i.imgur.com/a/XymJgPP.jpg
+  - https://raw.githubusercontent.com/henriquesebastiao/henrique-umbrel-apps-gallery/refs/heads/main/henrique-quant-ux/1.jpg
+  - https://raw.githubusercontent.com/henriquesebastiao/henrique-umbrel-apps-gallery/refs/heads/main/henrique-quant-ux/2.jpg
+  - https://raw.githubusercontent.com/henriquesebastiao/henrique-umbrel-apps-gallery/refs/heads/main/henrique-quant-ux/3.jpg
 path: ""
 defaultUsername: ""
 defaultPassword: ""
