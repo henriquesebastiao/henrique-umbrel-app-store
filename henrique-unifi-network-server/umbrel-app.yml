@@ -1,0 +1,33 @@
+manifestVersion: 1
+id: henrique-unifi-network-server
+category: networking
+name: UniFi
+version: "9.0.108"
+tagline: Manage your UniFi network infrastructure
+icon: https://raw.githubusercontent.com/henriquesebastiao/henrique-umbrel-apps-gallery/refs/heads/main/henrique-unifi-network-server/icon.png
+description: >-
+  UniFi Network Server is Ubiquiti's network management platform designed to configure, monitor, and manage UniFi devices such as access points, switches, and routers. It provides centralized network administration with features including:
+
+  - Cloud or Local Management – Can be hosted on local servers, a UniFi Cloud Key, a UniFi Dream Machine (UDM), or in the cloud.
+  
+  - Real-Time Monitoring – Displays traffic statistics, connected devices, and network events.
+  
+  - Centralized Configuration – Allows the creation of Wi-Fi networks, VLANs, firewall rules, and bandwidth control.
+  
+  - Access Control – Supports Guest Networks with captive portals and custom authentication.
+  
+  - Remote Updates and Maintenance – Automates firmware updates and device configurations.
+releaseNotes: >-
+  UniFi Network Application 9.0.108 adds Zone-Based Firewall, CyberSecure, Network Application API, and includes bug fixes.
+developer: Ubiquiti
+website: https://ui.com/
+dependencies: []
+repo: https://github.com/linuxserver/docker-unifi-network-application
+support: https://github.com/linuxserver/docker-unifi-network-application/issues
+port: 8199
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: Henrique Sebastião
+submission: https://github.com/henriquesebastiao/
