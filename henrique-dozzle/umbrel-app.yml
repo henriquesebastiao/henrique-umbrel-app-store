@@ -2,7 +2,7 @@ manifestVersion: 1
 id: henrique-dozzle
 category: developer
 name: Dozzle
-version: "8.10.7"
+version: "8.11.4"
 tagline: Realtime log viewer for docker containers
 icon: https://raw.githubusercontent.com/henriquesebastiao/henrique-umbrel-apps-gallery/refs/heads/main/henrique-dozzle/icon.png
 description: >-
@@ -18,12 +18,13 @@ description: >-
 releaseNotes: >-
   Features
 
-  - Adds new menu for custom groups.
+  - Adds streams to k8s.
+  - Adds labels support to k8s.
 
   Bug Fixes
 
-  - Fixes --menu-active-bg.
-  - Updates default timeout and adds user agent.
+  - Fixes ansi-to-html fallback colors.
+  - Update all non-major dependencies.
 developer: Amir Raminfar 
 website: https://dozzle.dev/
 dependencies: []
