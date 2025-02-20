@@ -7,7 +7,7 @@ services:
       APP_PORT: 8080
   
   web:
-    image: amir20/dozzle:v8.10.7@sha256:0891fe164191875c34cb0d64cab8d6106cdd58f186df2f7e5d7e5b8be65f9f25
+    image: amir20/dozzle:v8.11.5@sha256:57677aed536d17b5ba5ce321cd4c2039f8476af4488069832e16efc40cab780f
     restart: on-failure
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock

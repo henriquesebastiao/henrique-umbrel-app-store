@@ -2,7 +2,7 @@ manifestVersion: 1
 id: henrique-dozzle
 category: developer
 name: Dozzle
-version: "8.10.7"
+version: "8.11.5"
 tagline: Realtime log viewer for docker containers
 icon: https://raw.githubusercontent.com/henriquesebastiao/henrique-umbrel-apps-gallery/refs/heads/main/henrique-dozzle/icon.png
 description: >-
@@ -16,14 +16,10 @@ description: >-
   It also features an intelligent fuzzy search for container names, regex log search, split screen for viewing multiple logs, and live stats with memory and CPU usage.
   It also provides authentication with a username and password for added security.
 releaseNotes: >-
-  Features
-
-  - Adds new menu for custom groups.
-
   Bug Fixes
 
-  - Fixes --menu-active-bg.
-  - Updates default timeout and adds user agent.
+  - Removes streams from k8s.
+  - Update all non-major dependencies.
 developer: Amir Raminfar 
 website: https://dozzle.dev/
 dependencies: []
