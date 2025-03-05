@@ -7,7 +7,7 @@ services:
       APP_PORT: 8000
 
   downtify:
-    image: henriquesebastiao/downtify:0.2.2@sha256:edb3cb0691fa70ee9086e413a1074b42ed37d648ca2e4b69b943626d8a8a5b94
+    image: henriquesebastiao/downtify:0.2.4@sha256:a7374527a7fcf5e4ca37280567ff5b2e777b6b6e827fa7edc9a1f579a3eb2622
     restart: on-failure
     stop_grace_period: 1m
     volumes:
